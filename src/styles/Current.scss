@@ -1,0 +1,147 @@
+.current-container {
+  height: 100%;
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 #c0c0c0;
+
+  .row-1 {
+    display: flex;
+
+    .temperature {
+      font-size: 48px;
+      // font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Source Sans Pro';
+      font-weight: bold;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .status-icon {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+      }
+    }
+  }
+
+  .row-2 {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-color: #cecece transparent;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #cecece;
+      border-radius: 5px;
+
+      &:hover {
+        background: #a0a0a0;
+      }
+    }
+  }
+
+  .row-3 {
+    margin-top: 10px;
+    display: flex;
+    padding: 0;
+
+    .pressure,
+    .humidity {
+      padding: 0;
+      width: 48%;
+      margin: auto auto auto 0;
+      padding: 5px 15px;
+      font-size: 14px;
+      text-align: left;
+      border-radius: 3px;
+      background-color: #f7faff;
+
+      .heading {
+        font-weight: bold;
+        font-family: 'Noto Sans';
+        color: #1e1e1e;
+      }
+      .value {
+        font-family: 'Montserrat';
+        color: #1e1e1e;
+
+        span {
+          margin-left: 2px;
+        }
+      }
+    }
+    .humidity {
+      margin: auto 0 auto auto;
+    }
+  }
+
+  .row-4 {
+    margin-top: 10px;
+    width: 100%;
+    height: fit-content;
+
+    .details {
+      display: flex;
+      margin-top: 20px;
+      .sunrise,
+      .sunset {
+        padding: 0;
+        font-size: 13px;
+        // position: absolute;
+
+        .heading {
+          font-weight: bold;
+          font-family: 'Noto Sans';
+          color: #1e1e1e;
+        }
+        .value {
+          font-family: 'Montserrat';
+          color: #1e1e1e;
+        }
+      }
+      .sunrise {
+        left: 20px;
+        margin-right: auto;
+      }
+      .sunset {
+        right: 20px;
+        margin-left: auto;
+      }
+    }
+    .sunrise-graph {
+      margin-top: -28px;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .current-container {
+    .row-1 {
+      .temperature {
+        font-size: 44px;
+        margin-left: unset;
+      }
+    }
+    .row-2 {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .row-3 {
+      margin-top: 0;
+    }
+    .row-4 {
+      .sunrise-graph {
+        margin-top: -2px;
+      }
+    }
+  }
+}

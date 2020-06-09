@@ -1,0 +1,49 @@
+.searchbar-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: ease-in-out 200ms;
+  box-shadow: 0 0 8px 0 #c0c0c0;
+
+  &:focus-within {
+    box-shadow: 0 0 0 1px rgb(63, 162, 255), 0 0 10px 0 #c0c0c0, 0 4px 15px #c0c0c0;
+  }
+
+  .input-group {
+    padding: 0;
+    margin: 0;
+
+    .input-group-prepend,
+    .input-group-append {
+      background-color: #fff;
+      .input-group-text {
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+        span {
+          font-size: 26px;
+          color: #2e2e2e;
+        }
+      }
+    }
+
+    input {
+      border: none;
+      padding: 0;
+      color: #2e2e2e;
+      margin: auto;
+      font-size: 16px;
+
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
+
+      &::placeholder {
+        color: #8e8e8e;
+      }
+    }
+  }
+}

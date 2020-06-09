@@ -1,0 +1,124 @@
+.forecast-container {
+  margin-top: 10px;
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0 5px;
+
+  .forecast {
+    text-align: center;
+    max-width: 150px;
+    min-width: 75px;
+    float: left;
+    transition: ease-in-out 250ms;
+    border-radius: 2px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      box-shadow: 0 0 0 2px #2facef;
+      background-color: #fffff7;
+    }
+
+    .day {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
+    }
+    .temperature {
+      display: flex;
+      font-size: 16px;
+
+      .max {
+        color: #1e1e1e;
+        font-weight: bold;
+        margin: 0 2px 0 auto;
+      }
+      .min {
+        color: #6e6e6e;
+        margin: 0 auto 0 2px;
+      }
+
+      span {
+        color: #8e8e8e;
+      }
+    }
+    .status-icon {
+      height: 35px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+      }
+    }
+    .status {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+
+  scroll-behavior: smooth;
+  scrollbar-color: #cecece transparent;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cecece;
+    border-radius: 5px;
+
+    &:hover {
+      background: #a0a0a0;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .forecast-container {
+    margin-top: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .forecast {
+      border-radius: 0;
+      transition: ease-in-out 200ms;
+      padding: 8px;
+
+      &:hover {
+        background-color: rgb(255, 255, 245);
+      }
+
+      .day {
+        font-size: 14px;
+      }
+      .temperature {
+        font-size: 14px;
+        .max {
+          margin: 0 3px 0 auto;
+        }
+        .min {
+          margin: 0 auto 0 3px;
+        }
+      }
+      .status-icon {
+        height: 35px;
+      }
+      .status {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+}
