@@ -8,6 +8,8 @@ import Searchbar from './components/Searchbar';
 import Forecast from './components/Forecast';
 import Current from './components/Current';
 
+import { apiKey } from './config/credentials.json';
+
 const getTime = (timestamp) => {
   let date = new Date(timestamp * 1000);
   let hours = date.getHours();
@@ -30,9 +32,9 @@ const App = () => {
     currentLocation: '',
   });
 
-  // const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=cd0485f5bd3fd4e2e68723cbe1e0f0e0`;
+  // const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=${apiKey}`;
 
-  const weatherURL = `http://api.openweathermap.org/data/2.5/weather?q=${state.currentLocation}&units=metric&appid=cd0485f5bd3fd4e2e68723cbe1e0f0e0`;
+  const weatherURL = `http://api.openweathermap.org/data/2.5/weather?q=${state.currentLocation}&units=metric&appid=${apiKey}`;
 
   // Get current location from IP Address
   useEffect(() => {
